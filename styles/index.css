@@ -5,7 +5,7 @@
   padding: 20px 10px;
 }
 
-.header-right marryTitle {
+.header a marryTitle {
   float: left;
   color: black;
   text-align: center;
@@ -14,6 +14,7 @@
   font-size: 24px;
   line-height: 25px;
   border-radius: 4px;
+  display: inline;
 }
 
 /* Style the header links */
