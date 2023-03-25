@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<!-- Built entirely by hand -->
+<!-- and jQuery, FontAwesome, Materialize, and this cool Github activity stream https://github.com/caseyscarborough/github-activity -->
+<!-- Andrew with help from Nova, my mentor -->
+<!-- Joan Kaiser too-->
+<html lang="en">
+
+<head id="head"></head>
+<script async src="head.js"></script>
+
+<body class="grey lighten-1">
+    <header id="header"></header>
+    <script async src="header.js"></script>
+    
+    <div class="container">
+        <div class="row">
+            <div class="row"></div> <!-- Spacer -->
+            <div class="primary col l8 s12">
+                <div class="card blue-grey darken-3 semi-transparent">
+                    <div class="card-content">
+                        <span class="card-title white-text">Accommodations</span>
+                        <ul class="collapsible">
+                            <li>
+                              <div class="collapsible-header">
+                                Hotels in Wauwatosa (click to expand)
+                              </div>
+                              <div class="collapsible-body">
+                                <!-- <a href="https://en.wikipedia.org/wiki/Wauwatosa,_Wisconsin">Wauwatosa on Wikipedia</a> -->
+                                <ul>
+                                    <li>Sonesata Milwaukee West Wauwatosa</li>
+                                    <li>Residence Inn by Marriott Milwaukee West</li>
+                                    <li>Homewood Suites by Hilton</li>
+                                    <li>Springhill Suites Milwaukee West/Wauwatosa</li>
+                                </ul>
+                              </div>
+                            </li>
+                        </ul>
+                        <ul class="collapsible">
+                          <li>
+                            <div class="collapsible-header">
+                              Hotels in Milwaukee (click to expand)
+                            </div>
+                            <div class="collapsible-body">
+                                <!-- <a href="https://en.wikipedia.org/wiki/Milwaukee">Milwaukee on Wikipedia</a> -->
+                            </div>
+                          </li>
+						  <li>
+						  </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="card blue-grey darken-3 semi-transparent">
+                    <div class="card-content white-text">
+                        <span class="card-title">Gifts / Registry</span>
+                        <!-- <div id="feed" style="box-sizing: content-box"></div> -->
+                    </div>
+                </div>
+            </div>
+            <div class="secondary col l4 s12">
+                <div class="card blue-grey darken-3 semi-transparent">
+                    <div class="card-content white-text">
+                        <span class="card-title">Random Facts About Us</span>
+                        <div class="container">
+                            <div id="about-me-area">
+                                <p id="about-me-text"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer id="footer"></footer>
+    <script async src="footer.js"></script>
+</body>
+
+<script type="text/javascript">
+	GitHubActivity.feed({
+        username: "AndyResu",
+        selector: "#feed",
+        limit: 10
+    });
+
+    function autoplay_carousel(selector, delay) {
+        var x = function() {
+            $(selector).carousel("next");
+            setTimeout(x, delay);
+        }
+        setTimeout(x, delay);
+    }
+
+    var currentlyOn = 0;
+
+    function getNextTextFromList() {
+        currentlyOn++;
+        if (currentlyOn < RandomFactList.length) {
+            return RandomFactList[currentlyOn];
+        }
+        currentlyOn = 1;
+        return RandomFactList[0];
+    }
+
+    function autoplay_randomfacts(selector, fadeInTime, fadeOutTime, delayMultiplier) {
+        var x = function() {
+            $(selector).fadeOut(fadeOutTime, function() {
+                let text = getNextTextFromList();
+                let newDelay = text.split(" ").length * delayMultiplier;
+                $("#about-me-text").text(text);
+                $(selector).fadeIn(fadeInTime, function() {
+                    setTimeout(x, newDelay);
+                })
+            })
+        }
+        let originalText = $("#about-me-text").text();
+        let delay = originalText.split(" ").length * delayMultiplier;
+        setTimeout(x, delay);
+    }
+
+    /**
+     * Randomize array element order in-place.
+     * Using Durstenfeld shuffle algorithm.
+     */
+    function shuffleArray(array) {
+        for (var i = array.length - 1; i > 0; i--) {
+            var j = Math.floor(Math.random() * (i + 1));
+            var temp = array[i];
+            array[i] = array[j];
+            array[j] = temp;
+        }
+        return array;
+    }
+
+    $(document).ready(function() {
+        RandomFactList = shuffleArray(RandomFactList);
+        $("#about-me-text").text(RandomFactList[0]);
+        autoplay_randomfacts("#about-me-area", 400, 400, 500);
+        $('.collapsible').collapsible();
+    })
+
+    var RandomFactList = [
+        "Andrew and Joan are training for a 5k",
+        "We origionally met while working at a local grocery store, 'Sendik's Grocery' in Wauwatosa",
+        "There have been snowy days in April... maybe we can build a snowman",
+        "Trinity is where Andrew's parents got married",
+        "Both Joan and Andrew were undergraduate researchers",
+    ]
+</script>
+
+</html>
