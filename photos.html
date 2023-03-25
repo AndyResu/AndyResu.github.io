@@ -11,7 +11,7 @@
 <body class="grey lighten-1">
     <header id="header"></header>
     <script async src="header.js"></script>
-    
+
     <div class="container">
         <div class="row">
             <div class="row"></div> <!-- Spacer -->
@@ -49,21 +49,5 @@
     <footer id="footer"></footer>
     <script async src="footer.js"></script>
 </body>
-
-<script type="text/javascript">
-	GitHubActivity.feed({
-        username: "AndyResu",
-        selector: "#feed",
-        limit: 10
-    });
-
-    function autoplay_carousel(selector, delay) {
-        var x = function() {
-            $(selector).carousel("next");
-            setTimeout(x, delay);
-        }
-        setTimeout(x, delay);
-    }
-</script>
 
 </html>
