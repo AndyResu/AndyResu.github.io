@@ -15,7 +15,7 @@
 
     <title>Andrew and Joan are getting married!</title>
     <link rel='shortcut icon' href='Jody_Logo.png' type='image/x-icon' />
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous" max-age=86400></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous" maxage = 86400></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/octicons/2.0.2/octicons.min.css" max-age=86400>
     <link rel="stylesheet" href="styles/github-activity-0.1.4.min.css" max-age=86400>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/0.7.2/mustache.min.js" max-age=86400></script>
@@ -48,19 +48,8 @@
 </head>
 
 <body class="grey lighten-1">
-    <nav class="blue-grey darken-3 semi-transparent">
-        <div class="nav-wrapper">
-            <div class="header">
-                <a href="" id="title">Joan and Andy are Getting Married!</a>
-                <div class="header-right">
-                    <a href="">Home</a>
-                    <a href="/travel.html">Travel</a>
-                    <a href="/faq.html">FAQ</a>
-                    <a href="/photos.html">Photos</a>
-                </div>
-            </div>
-        </div>
-    </nav>
+    <header id="header"></header>
+    <script async src="header.js"></script>
     <div class="container">
         <div class="row">
             <div class="row"></div> <!-- Spacer -->
@@ -180,21 +169,8 @@
         </div>
     </div>
 
-    <footer class="page-footer blue-grey darken-3 semi-transparent">
-        <div class="container">
-            <div class="row">
-                <div class="col l6 s12">
-                    <h5 class="white-text">Contact Us</h5>
-                    <p class="grey-text text-lighten-4">(Email is probably the best way)</p>
-                    <p class="grey-text text-lighten-4">Phone: email first.</p>
-                </div>
-                <div class="col l4 offset-l2 s12">
-                    <h5 class="white-text">Links</h5>
-                    <a href="https://github.com/AndyResu"><i class="fab fa-github-square fa-5x" aria-hidden="true"></i></a>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <footer id="footer"></footer>
+    <script async src="footer.js"></script>
 </body>
 
 <script type="text/javascript">
