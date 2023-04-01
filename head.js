@@ -39,6 +39,12 @@ let head = `
         <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js" integrity="sha256-CutOzxCRucUsn6C6TcEYsauvvYilEniTXldPa6/wu0k=" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.20/moment-timezone-with-data.min.js" integrity="sha256-VbgTHb5lNUXSO3dpUopgsh61ITkA7UBADWrQvcaj/vY=" crossorigin="anonymous"></script>
         <script src="scripts/custom.js" charset="utf-8"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                var elems = document.querySelectorAll('.collapsible');
+                var instances = M.Collapsible.init(elems, options);
+            });
+        </script>
     </head>
 `;
 document.getElementById("head").innerHTML = head;
