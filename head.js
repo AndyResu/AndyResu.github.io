@@ -10,6 +10,7 @@ let head = `
         <title>Andrew and Joan are getting married!</title>
         <link rel='shortcut icon' href='Jody_Logo.png' type='image/x-icon' />
         <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous" maxage = 86400></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/octicons/2.0.2/octicons.min.css" max-age=86400>
         <link rel="stylesheet" href="styles/github-activity-0.1.4.min.css" max-age=86400>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/0.7.2/mustache.min.js" max-age=86400></script>
